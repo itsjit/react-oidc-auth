@@ -1,4 +1,4 @@
-name: Npm
+name: package
 
 on:
   push:
