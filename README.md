@@ -1,5 +1,7 @@
 # React Components for OAuth2 Implicit Flow
 
+![Publish](https://github.com/itsjit/react-oidc-auth/workflows/Publish/badge.svg)
+
 Uses **_oidc-client_** package internally to provide couple of components for OAuth2 implicit flow.
 
 Basically the app sits on **/** route.
