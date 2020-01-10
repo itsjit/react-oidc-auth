@@ -20,8 +20,7 @@
     "react": "^16.12.0"
   },
   "scripts": {
-    "build": "SET NODE_ENV=production && rmdir dist /s /q && npx babel src --out-dir dist --copy-files",
-    "build:github": "(SET NODE_ENV=production) -and (rmdir dist /s /q) -and (npx babel src --out-dir dist --copy-files)"
+    "build": "cmd /c \"SET NODE_ENV=production && rmdir dist /s /q && npx babel src --out-dir dist --copy-files\""
   },
   "eslintConfig": {
     "extends": "react-app"
