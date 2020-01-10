@@ -1,4 +1,4 @@
-name: publish
+name: build
 
 on:
   push:
@@ -18,7 +18,3 @@ jobs:
         run: yarn install
       - name: Build
         run: yarn run build:npm
-      - name: Publish
-        run: yarn publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
