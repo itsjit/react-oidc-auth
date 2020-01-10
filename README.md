@@ -1,6 +1,7 @@
 # React Components for OAuth2 Implicit Flow
 
 ![Npm](https://github.com/itsjit/react-oidc-auth/workflows/Npm/badge.svg)
+[![npm version](https://badge.fury.io/js/react-oidc-auth.svg)](https://badge.fury.io/js/react-oidc-auth)
 
 Uses **_oidc-client_** package internally to provide couple of components for OAuth2 implicit flow.
 

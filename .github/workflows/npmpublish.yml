@@ -18,8 +18,6 @@ jobs:
         run: yarn install
       - name: Build
         run: yarn run build:npm
-      - name: Create .npmrc
-        run: echo "//registry.npmjs.org/:_authToken=${{secrets.NPM_AUTH_TOKEN}}" >> ~/.npmrc
       - name: Publish
         run: yarn publish
         env:
