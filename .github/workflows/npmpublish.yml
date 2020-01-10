@@ -14,17 +14,16 @@ jobs:
         with:
           node-version: 12
       - run: yarn install
-      - run: yarn run publish:npm
-
-  publish-npm:
-    needs: build
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-          registry-url: https://registry.npmjs.org/
-      - run: yarn publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+      - run: npm run publish:npm
+  # publish-npm:
+  #   needs: build
+  #   runs-on: windows-latest
+  #   steps:
+  #     - uses: actions/checkout@v1
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 12
+  #         registry-url: https://registry.npmjs.org/
+  #     - run: yarn publish
+  #       env:
+  #         NODE_AUTH_TOKEN: ${{secrets.npm_token}}

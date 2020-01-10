@@ -20,7 +20,7 @@
     "react": "^16.12.0"
   },
   "scripts": {
-    "publish:npm": "npx babel src --out-dir dist --copy-files"
+    "publish:npm": "SET NODE_ENV=production && rmdir dist /s /q && npx babel src --out-dir dist --copy-files"
   },
   "eslintConfig": {
     "extends": "react-app"
