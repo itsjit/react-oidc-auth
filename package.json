@@ -1,0 +1,32 @@
+{
+  "name": "react-oidc-auth",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itsjit/react-oidc-auth.git"
+  },
+  "version": "0.0.1",
+  "private": false,
+  "description": "React Components for OAuth2 Implicit Flow",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "babel": {
+    "presets": [
+      "@babel/react"
+    ]
+  },
+  "dependencies": {
+    "oidc-client": "^1.10.0",
+    "react": "^16.12.0"
+  },
+  "scripts": {
+    "publish:npm": "SET NODE_ENV=production && rmdir dist /s /q && npx babel src --out-dir dist --copy-files"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.5",
+    "react-scripts": "3.3.0"
+  }
+}
