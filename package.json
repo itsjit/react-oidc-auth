@@ -5,11 +5,10 @@
     "type": "git",
     "url": "https://github.com/itsjit/react-oidc-auth.git"
   },
-  "version": "0.0.3",
+  "version": "0.0.1",
   "private": false,
   "description": "React Components for OAuth2 Implicit Flow",
   "main": "./dist/index.js",
-  "module": "./dist/index.js",
   "babel": {
     "presets": [
       "@babel/react"
@@ -20,7 +19,8 @@
     "react": "^16.12.0"
   },
   "scripts": {
-    "build:npm": "SET NODE_ENV=production && (if exist dist rmdir dist /s /q) && npx babel src --out-dir dist --copy-files"
+    "build:npm": "SET NODE_ENV=production && (if exist dist rmdir dist /s /q) && npx babel src --out-dir dist --copy-files",
+    "start": "yarn --cwd ./example run start"
   },
   "eslintConfig": {
     "extends": "react-app"

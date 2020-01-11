@@ -1,0 +1,8 @@
+node_modules/
+src/
+example/
+.github/
+.git/
+yarn.lock
+npm.lock
+.gitignore
