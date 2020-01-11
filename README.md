@@ -74,11 +74,7 @@ const App = ({ setUser, clearUser }) => {
         <Route exact={false} path="/">
           <Authenticated oidcConfiguration={oidcConfiguration} onUserLoaded={setUser} onUserUnloaded={clearUser}>
             <OidcContext.Consumer>
-              {value => (
-                <button floated="right" basic icon onClick={() => value.userManager.signoutRedirect()}>
-                  Log out
-                </button>
-              )}
+              {value => <button onClick={() => value.userManager.signoutRedirect()}>Log out</button>}
             </OidcContext.Consumer>
 
             <Route exact={true} path="/">

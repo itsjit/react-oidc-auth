@@ -5,7 +5,7 @@
     "type": "git",
     "url": "https://github.com/itsjit/react-oidc-auth.git"
   },
-  "version": "0.0.4",
+  "version": "0.0.5",
   "private": false,
   "description": "React Components for OAuth2 Implicit Flow",
   "main": "./dist/index.js",
