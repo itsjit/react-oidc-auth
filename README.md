@@ -31,7 +31,7 @@ Generally the client in OAuth2 provider must be set up with appropriate callback
 
 ```jsx
 import React from 'react';
-import { Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import {
   Authenticated,
@@ -57,7 +57,7 @@ const App = ({ setUser, clearUser }) => {
   // setUser - adds the user (incl. tokens) to state/store
   // clearUse - removes the user from state/store
   return (
-    <Router>
+    <BrowserRouter>
       <Switch>
         <Route
           exact={true}
@@ -91,7 +91,7 @@ const App = ({ setUser, clearUser }) => {
           </Authenticated>
         </Route>
       </Switch>
-    </Router>
+    </BrowserRouter>
   );
 };
 ```
