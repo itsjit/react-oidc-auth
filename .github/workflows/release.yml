@@ -9,7 +9,7 @@ jobs:
   publish-npm:
     runs-on: windows-latest
     steps:
-      uses: olegtarasov/get-tag@v1
+      - uses: olegtarasov/get-tag@v1
         id: tagName
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
