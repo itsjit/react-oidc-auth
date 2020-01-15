@@ -9,8 +9,11 @@ jobs:
   publish-npm:
     runs-on: windows-latest
     steps:
-      - uses: olegtarasov/get-tag@v1
-        id: tagName
+      - name: 'Get Previous tag'
+        id: previoustag
+        uses: 'WyriHaximus/github-action-get-previous-tag@master'
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
@@ -19,7 +22,7 @@ jobs:
       - name: Install
         run: yarn install
       - name: Update package version
-        run: npm --no-git-tag-version version ${{ env.GITHUB_TAG_NAME }}
+        run: npm --no-git-tag-version version ${{ steps.previoustag.outputs.tag }}
       - name: Build
         run: yarn run build:npm
       # - name: Publish
@@ -35,5 +38,5 @@ jobs:
         with:
           prerelease: true
           name: github.ref
-          bodyFile: 'docs/release/changelog-${{ env.GITHUB_TAG_NAME }}.md'
+          bodyFile: 'docs/release/changelog-${{ steps.previoustag.outputs.tag }}.md'
           token: ${{ secrets.GITHUB_TOKEN }}
