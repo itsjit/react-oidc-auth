@@ -2,8 +2,8 @@ name: publish
 
 on:
   push:
-    branches:
-      - master
+    tags:
+      - v*
 
 jobs:
   publish-npm:
@@ -16,9 +16,22 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - name: Install
         run: yarn install
+      - name: Update package version
+        run: npm --no-git-tag-version version ${{ github.ref }}
       - name: Build
         run: yarn run build:npm
-      - name: Publish
-        run: yarn publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+      # - name: Publish
+      #   run: yarn publish
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+
+  create-release:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: ncipollo/release-action@v1
+        with:
+          prerelease: true
+          name: github.ref
+          bodyFile: 'docs/release/changelog-${{github.ref}}.md'
+          token: ${{ secrets.GITHUB_TOKEN }}

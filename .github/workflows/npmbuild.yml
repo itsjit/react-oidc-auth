@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  publish-npm:
+  build:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v1
@@ -16,5 +16,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - name: Install
         run: yarn install
-      - name: Build
+      - name: Build example
+        run: yarn run build:npm
+      - name: Build package
         run: yarn run build:npm

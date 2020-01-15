@@ -3,6 +3,7 @@
 ![build](https://github.com/itsjit/react-oidc-auth/workflows/build/badge.svg)
 ![publish](https://github.com/itsjit/react-oidc-auth/workflows/publish/badge.svg)
 [![npm version](https://badge.fury.io/js/react-oidc-auth.svg)](https://badge.fury.io/js/react-oidc-auth)
+![release](https://img.shields.io/github/release/itsjit/react-oidc-auth/all.svg)
 
 Uses **_oidc-client_** package internally to provide couple of components for OAuth2 implicit flow.
 

@@ -20,7 +20,8 @@
   },
   "scripts": {
     "build:npm": "SET NODE_ENV=production && (if exist dist rmdir dist /s /q) && npx babel src --out-dir dist --copy-files",
-    "start": "yarn --cwd ./example run start"
+    "start": "yarn --cwd ./example run start",
+    "build:example": "yarn --cwd ./example run build"
   },
   "eslintConfig": {
     "extends": "react-app"
