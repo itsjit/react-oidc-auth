@@ -36,6 +36,7 @@ jobs:
       - uses: ncipollo/release-action@v1
         with:
           prerelease: true
+          allowUpdates: true
           name: ${{ env.GITHUB_TAG_NAME }}
           bodyFile: 'docs/release/changelog-${{ env.GITHUB_TAG_NAME }}.md'
           token: ${{ secrets.GITHUB_TOKEN }}
