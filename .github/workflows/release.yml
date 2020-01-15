@@ -28,13 +28,14 @@ jobs:
       #     NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
 
   create-release:
-    needs: publish-npm
     runs-on: windows-latest
     steps:
+      - uses: olegtarasov/get-tag@v1
+        id: tagName
       - uses: actions/checkout@v1
       - uses: ncipollo/release-action@v1
         with:
           prerelease: true
-          name: github.ref
+          name: ${{ env.GITHUB_TAG_NAME }}
           bodyFile: 'docs/release/changelog-${{ env.GITHUB_TAG_NAME }}.md'
           token: ${{ secrets.GITHUB_TOKEN }}
